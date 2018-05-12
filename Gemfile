@@ -38,6 +38,9 @@ gem 'jbuilder', '~> 2.5'
 # For the user sessions and registration:
 gem 'devise'
 
+# Template engine:
+gem 'haml'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
