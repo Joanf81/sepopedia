@@ -22,6 +22,8 @@ module Sepopedia
 	  # you can also specify a different test framework or ORM here
 	  # g.test_framework  :rspec
 	  # g.orm             :mongoid
+
+    config.i18n.default_locale = :es
 	end 
   end
 end
