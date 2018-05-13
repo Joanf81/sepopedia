@@ -5,12 +5,10 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# DataBase connector for MariaDB
-gem 'mysql2', '~> 0.5.1'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -33,20 +31,42 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
+## DATABASE 
+# DataBase connector for MariaDB
+gem 'mysql2', '~> 0.5.1'
 
 
-# For the user sessions and registration:
+## SECURITY ADDITIONAL PLUGINS
+# For the users management (registration, sessions, login, etc,..)
 gem 'devise'
 
+
+## VIEWS ADITIONAL PLUGIN
 # Template engine:
 gem 'haml'
 
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+
+## ASSET PLUGINS
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+
+gem 'jquery-rails'
+
+# Form helpers:
+gem 'simple_form'
+
+gem 'sprockets-rails', '~> 3.2.1'
+gem 'bootstrap', '~> 4.1.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Email previsualization:
+  gem "mailcatcher"
 end
 
 group :development do
