@@ -1,0 +1,25 @@
+= devise_error_messages!
+.title
+  %h2
+    ¡Regístrate en SepoPedia!
+.container
+  .row
+    .col-sm-3.col-md-4.col-md-offset-4
+    .col-sm-6.col-md-4.col-md-offset-4
+      .account-wall
+        #my-tab-content.tab-content
+          #login.tab-pane.active
+            %img.profile-img{:alt => "", :src => "https://lh5.googleusercontent.com/-b0lyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"}/
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-user-session form-signup"}) do |f|
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email *", class: "form-control"
+              = f.input_field :user_name, autofocus: true, autocomplete: "usuario", placeholder: "Nombre de usuario", class: "form-control"
+
+              = f.password_field :password, autocomplete: "off", placeholder: "Contraseña *", class: "form-control"
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repite contraseña *", class: "form-control"
+              = f.button :submit, value: "Regístrarse", class: "btn btn-lg btn-outline-primary btn-block"
+            #tabs
+              %p.text-center
+                %a{:href => "#"} ¿Cuales son las ventajas de tener una cuenta?
+    .col-sm-6.col-md-4.col-md-offset-4
+
+          
