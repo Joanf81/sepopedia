@@ -1,7 +1,7 @@
 = devise_error_messages!
 .title
-  %h2
-    ¡Regístrate en SepoPedia!
+  %h2= t('views.devise.registrations.new.title')
+    
 .container
   .row
     .col-sm-3.col-md-4.col-md-offset-4
@@ -11,15 +11,15 @@
           #login.tab-pane.active
             %img.profile-img{:alt => "", :src => "https://lh5.googleusercontent.com/-b0lyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"}/
             = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-user-session form-signup"}) do |f|
-              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email *", class: "form-control"
-              = f.input_field :user_name, autofocus: true, autocomplete: "usuario", placeholder: "Nombre de usuario", class: "form-control"
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t('views.devise.registrations.new.email_placeholder'), class: "form-control"
+              = f.input_field :user_name, autofocus: true, autocomplete: "usuario", placeholder: t('views.devise.registrations.new.user_name_placeholder'), class: "form-control"
 
-              = f.password_field :password, autocomplete: "off", placeholder: "Contraseña *", class: "form-control"
-              = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repite contraseña *", class: "form-control"
-              = f.button :submit, value: "Regístrarse", class: "btn btn-lg btn-outline-primary btn-block"
+              = f.password_field :password, autocomplete: "off", placeholder: t('views.devise.registrations.new.password_placeholder'), class: "form-control"
+              = f.password_field :password_confirmation, autocomplete: "off", placeholder: t('views.devise.registrations.new.repeat_placeholder'), class: "form-control"
+              = f.button :submit, value: t('views.devise.registrations.new.register_button_placeholder'), class: "btn btn-lg btn-outline-primary btn-block"
             #tabs
               %p.text-center
-                %a{:href => "#"} ¿Cuales son las ventajas de tener una cuenta?
+                %a{:href => "#"}= t('views.devise.registrations.new.advantages_of_having_account') 
     .col-sm-6.col-md-4.col-md-offset-4
 
           

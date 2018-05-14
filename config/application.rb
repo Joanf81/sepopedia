@@ -16,14 +16,16 @@ module Sepopedia
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    I18n.config.available_locales = :es
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :es
+
     config.generators do |g|
 	  g.template_engine :haml
 
 	  # you can also specify a different test framework or ORM here
 	  # g.test_framework  :rspec
 	  # g.orm             :mongoid
-
-    config.i18n.default_locale = :es
 	end 
   end
 end

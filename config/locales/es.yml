@@ -1,0 +1,94 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  app_title: "SepoPedia"
+
+  views:
+    home:
+      hello: "Hola mundo!!!"
+
+    devise:
+      mailer:
+        confirmation_instructions:
+          welcome: "¡Bienvenido a SepoPedia %{user_name}!"
+          introduction: "Recientemente has creado una cuenta cuenta de usuario en SepoPienso, por mediades de serguridad, debes confirmar tu cuenta antes de poder usarla."
+          confirmation: "ParSi nunca has solicitado restablecer tu contraseña, porfavor ignora este email. Tu contraseña no se verá afectada a menos que accedas al link y la cambies.a confirmar tu cuenta haz click %{here}."
+          final: "Si nunca has creado una cuenta en {app_title}, porfavor ignora este email."
+        password_change:
+          text: "Hola %{user_name}, te enviamos este email para comunicarte que tu contraseña ha sido restablecida correctamente."
+        password_reset_intructions:
+          text1: "Hola %{user_name}, alguien ha solicitado un enlace para restablecer tu contraseña de SepoPedia debido a la pérdida u olvido de esta. Si eres tú quien solicitó dicho cambio, haz click {here}."
+          text2: "Si nunca has solicitado restablecer tu contraseña, porfavor ignora este email. Tu contraseña no se verá afectada a menos que accedas al link y la cambies."
+      login:
+        new:
+          title: "¡Identifícate en SepoPedia!"
+          email_placeholder: "Email *"
+          password_placeholder: "Contraseña *"
+          login_button: "Identifícate"
+          still_without_account: "¿Todavia no tienes cuenta de usuario?"
+          password_forgoten: "¿Has olvidado o perdido la contraseña?"
+      registrations:
+        new: 
+          title: "¡Regístrate en SepoPedia!"
+          email_placeholder: "Email *"
+          user_name_placeholder: "Nombre de usuario"
+          password_placeholder: "Contraseña *"
+          repeat_placeholder: "Repite contraseña *"
+          register_button_placeholder: "Regístrate"
+          advantages_of_having_account: "¿Cuales son las ventajas de tener una cuenta?"
+      passwords:
+        edit:
+          title: "Restablecer contraseña"
+          description: "A continuación puedes establecer una nueva contraseña para tu cuenta de usuario."
+          new_password: "Nueva contraseña"
+          repeat_password: "Repite contraseña"
+          reset_password: "Restablecer contraseña"
+        new:
+          title: "¿Has olvidado o perdido la contraseña?"
+          description: "A continuación, introduce tu dirección correo electrónico y recibirás un email con las instrucciones de recuperación de contraseña."
+          email_placeholder: "Email *"
+          send_email_button: "Enviar email"
+
+    shared:
+      main_menu:
+        find_button: "Buscar"
+        find_placeholder: "Buscar..."
+        hello: "Hola"
+        edit_my_profile: "Editar mi perfil"
+        show_my_profile: "Ver mi perfil"
+        logout: "Cerrar sesion"
+        remove_account: "Darse de baja"
+        welcome_again: "¡Bienvenid@ de nuevo!"
+        welcome: "¡Bienvenid@ a SepoPedia!"
+        login: "Identifícate"
+        register: "Regístrate"
+
