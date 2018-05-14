@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_14_180117) do
+ActiveRecord::Schema.define(version: 2018_05_14_181534) do
+
+  create_table "assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.integer "assetable_id", null: false
+    t.string "assetable_type", limit: 30, null: false
+    t.string "type", limit: 30
+    t.string "guid", limit: 30
+    t.string "public_token", limit: 30
+    t.integer "user_id"
+    t.integer "sort_order", default: 0
+    t.integer "width"
+    t.integer "height"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assetable_type", "type", "assetable_id"], name: "index_assets_on_assetable_type_and_type_and_assetable_id"
+    t.index ["guid"], name: "index_assets_on_guid"
+    t.index ["public_token"], name: "index_assets_on_public_token"
+    t.index ["user_id"], name: "index_assets_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
