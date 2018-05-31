@@ -42,11 +42,11 @@ es:
           welcome: "¡Bienvenido a SepoPedia %{user_name}!"
           introduction: "Recientemente has creado una cuenta cuenta de usuario en SepoPienso, por mediades de serguridad, debes confirmar tu cuenta antes de poder usarla."
           confirmation: "ParSi nunca has solicitado restablecer tu contraseña, porfavor ignora este email. Tu contraseña no se verá afectada a menos que accedas al link y la cambies.a confirmar tu cuenta haz click %{here}."
-          final: "Si nunca has creado una cuenta en {app_title}, porfavor ignora este email."
+          final: "Si nunca has creado una cuenta en %{app_title}, porfavor ignora este email."
         password_change:
           text: "Hola %{user_name}, te enviamos este email para comunicarte que tu contraseña ha sido restablecida correctamente."
         password_reset_intructions:
-          text1: "Hola %{user_name}, alguien ha solicitado un enlace para restablecer tu contraseña de SepoPedia debido a la pérdida u olvido de esta. Si eres tú quien solicitó dicho cambio, haz click {here}."
+          text1: "Hola %{user_name}, alguien ha solicitado un enlace para restablecer tu contraseña de SepoPedia debido a la pérdida u olvido de esta. Si eres tú quien solicitó dicho cambio, haz click %{here}."
           text2: "Si nunca has solicitado restablecer tu contraseña, porfavor ignora este email. Tu contraseña no se verá afectada a menos que accedas al link y la cambies."
       login:
         new:
