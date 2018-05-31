@@ -1,5 +1,5 @@
 .title
 	%h2= t('views.devise.mailer.confirmation_instructions.welcome', user_name: @user_name || @email)
 %p= t('views.devise.mailer.confirmation_instructions.introduction')
-%p= raw t('views.devise.mailer.confirmation_instructions.confirmation', here: link_to('aquí', confirmation_url(@resource, confirmation_token: @token)) 
-%p= raw t('views.devise.mailer.confirmation_instructions.final', app_title: link_to("SepoPedia", "http://www.sepopedia.com"))
+%p= raw t('views.devise.mailer.confirmation_instructions.confirmation', here: link_to('aquí', confirmation_url(@resource, confirmation_token: @token)))
+%p= raw t('views.devise.mailer.confirmation_instructions.final', app_title: link_to('SepoPedia', 'http://www.sepopedia.com'))
