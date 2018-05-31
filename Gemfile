@@ -69,7 +69,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # Email previsualization:
-  gem "mailcatcher"
+  #gem "mailcatcher"
+  gem "letter_opener"
 end
 
 group :development do
