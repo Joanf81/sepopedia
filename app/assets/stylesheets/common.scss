@@ -2,6 +2,70 @@ body{
     background-color:#f5f5f5;
 }
 
+.main-wall
+{
+    margin: 0% 7% 0% 7%;
+    padding: 15px 5% 20px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 3px;
+}
+
+.section {
+	padding: 35px 80px 20px 80px;
+}
+
+/*
+	TEXT BOX
+*/
+.text-box {
+	margin: 15px 1% 15px 1%;
+	padding: 0% 1% 0% 1%;
+	box-shadow: -3px 3px 10px 0 rgba(0, 0, 0, 0.45);
+	border-radius: 8px;
+}
+
+.text-box .title-text-box{
+	font-size: 18px;
+	padding-top: 4px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+
+.text-box .content-text-box{
+	font-size: 16px;
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+
+.section-box {
+	margin: 15px 1% 5px 1%;
+	padding: 5% 8% 5% 8%;
+	box-shadow: -0.5px 0.5px 4px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+}
+
+.section-box .subsection-box {
+	margin-bottom: 40px;
+}
+
+.section-box .title-section-box{
+	font-size: 36px;
+	padding-bottom: 5px;
+}
+
+.section-box .subsection-box .title-section-box{
+	font-size: 26px !important;
+	padding-bottom: 5px;
+}
+
+.section-box .content-section-box{
+	font-size: 16px;
+	margin-bottom: 15px;
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+
 
 /*
 	TITLES
@@ -9,4 +73,8 @@ body{
 .title h2 {
 	text-align: center;
 	margin-top: 30px;
+}
+
+.sub-title h2, .sub-title h3{
+	margin-top: 10px;
 }

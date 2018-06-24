@@ -63,3 +63,26 @@
     color: #656565;
     margin: 15px 25px 10px 25px;
 }
+
+
+.profile-picture {
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    box-shadow: -3px 3px 10px 0 rgba(0, 0, 0, 0.45);
+    border-radius: 50%;
+}
+
+.profile-attribute {
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
+
+.profile-attribute .attribute-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-attribute .attribute-content {
+    font-size: 16px;
+}
