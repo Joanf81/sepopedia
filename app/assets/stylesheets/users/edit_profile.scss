@@ -1,0 +1,36 @@
+/*
+    USER EDIT PROFILE TAB
+*/ 
+
+form.edit-profile-form input.input-string {
+	margin: 10px 0px 10px 0px;
+	width: 100%;
+}
+
+form.edit-profile-form small.text-help {
+	margin-top: -10px;
+}
+
+.user-profile-progress {
+	padding: 0% 7% 0% 7%;
+}
+
+.user-profile-progress .title-progress h3 {
+	font-size: 20px;
+	margin-bottom: 1px;
+	font-weight: bold;
+}
+
+.user-profile-progress .progress-bar {
+	font-size: 25px;
+}
+
+.user-profile-progress .progress {
+	height: 40px;
+	border-radius: 10px;
+	margin-bottom: 25px;
+}
+
+.edit-profile-form .profile_picture {
+	margin: 20px 20px 20px 0px;
+}
