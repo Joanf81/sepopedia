@@ -16,4 +16,13 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+//= require froala_editor.min.js
+//= require plugins/colors.min.js
+//= require plugins/font_family.min.js
+//= require plugins/font_size.min.js
+//= require plugins/lists.min.js
+//= require plugins/help.min.js
+//= require rich_text_editor
+
 //= require_tree .

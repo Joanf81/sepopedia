@@ -48,6 +48,9 @@ gem 'devise'
 # Template engine:
 gem 'haml'
 
+# Decorators:
+gem 'draper', github: 'drapergem/draper'
+
 
 ## ASSET PLUGINS
 # Use SCSS for stylesheets
@@ -62,7 +65,13 @@ gem 'sprockets-rails', '~> 3.2.1'
 gem 'bootstrap', '~> 4.1.1'
 
 # File puploader:
-gem 'rails-uploader'
+gem 'mini_magick'
+gem 'file_uploader'
+gem 'carrierwave', '~> 1.0'
+gem 'file_validators'
+
+# Rich text editor
+gem "wysiwyg-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

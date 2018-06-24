@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/drapergem/draper.git
+  revision: ed62f5555148b997eeb9feb365dd3dffcdb3d903
+  specs:
+    draper (3.0.1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -29,6 +40,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.2.0)
       activesupport (= 5.2.0)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.2.0)
       activemodel (= 5.2.0)
       activesupport (= 5.2.0)
@@ -66,6 +81,10 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.0)
+    carrierwave (1.2.2)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -89,6 +108,12 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
+    file_uploader (0.2.1)
+    file_validators (2.3.0)
+      activemodel (>= 3.2)
+      mime-types (>= 1.0)
+    font-awesome-sass (5.0.13)
+      sassc (>= 1.11)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -104,8 +129,6 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
-      railties (>= 3.2.16)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.6.0)
@@ -122,7 +145,11 @@ GEM
     marcel (0.3.2)
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
+    mini_magick (4.8.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -157,8 +184,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rails-uploader (0.4.4)
-      jquery-ui-rails
     railties (5.2.0)
       actionpack (= 5.2.0)
       activesupport (= 5.2.0)
@@ -169,6 +194,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -185,6 +212,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (1.11.4)
+      bundler
+      ffi (~> 1.9.6)
+      sass (>= 3.3.0)
     selenium-webdriver (3.12.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -224,6 +255,9 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    wysiwyg-rails (2.8.1)
+      font-awesome-sass (>= 4.4.0)
+      railties (>= 3.2, < 6.0)
     xpath (3.0.0)
       nokogiri (~> 1.8)
 
@@ -235,18 +269,22 @@ DEPENDENCIES
   bootstrap (~> 4.1.1)
   byebug
   capybara (>= 2.15, < 4.0)
+  carrierwave (~> 1.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  draper!
+  file_uploader
+  file_validators
   haml
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   mysql2 (~> 0.5.1)
   puma (~> 3.11)
   rails (~> 5.2.0)
-  rails-uploader
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
@@ -257,6 +295,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  wysiwyg-rails
 
 RUBY VERSION
    ruby 2.5.1p57
