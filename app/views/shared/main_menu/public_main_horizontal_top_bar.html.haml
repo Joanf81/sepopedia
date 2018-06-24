@@ -16,9 +16,9 @@
             = t('views.shared.main_menu.hola')
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            %strong= current_user.user_name || current_user.email
+            %strong= current_user.name
           .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-            %a.dropdown-item{:href => "#"}= t('views.shared.main_menu.show_my_profile')
+            = link_to t('views.shared.main_menu.show_my_profile'), my_profile_users_path, :class => 'dropdown-item'
             = link_to t('views.shared.main_menu.edit_my_profile'), edit_user_registration_path, :class => 'dropdown-item'
             
             .dropdown-divider
