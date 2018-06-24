@@ -1,0 +1,8 @@
+$(document).ready () ->
+	$(".rich-text-editor-for-user-profile").froalaEditor({
+		height: 500,
+		fontSizeSelection: true,
+		fontSize: ['8', '10', '12', '14', '18', '22', '26', '32']
+	});
+
+	$(".rich-text-editor-for-user-profile").froalaEditor('html.set', $("#user-content").val());
