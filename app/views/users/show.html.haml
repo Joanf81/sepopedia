@@ -1,0 +1,41 @@
+.main-wall
+  .row
+    .section.col-md-12
+      %center
+        %h2="Perfil de #{@resource.name}."
+  .section-box
+    .row
+      .col-md-6.col-sm-12
+        .subsection-box
+          .content-section-box
+            = image_tag(@resource.try(:profile_picture).try(:url, :thumb), :class => 'profile-picture', id: 'profile-picture', height: '300', width: '300')
+
+      .col-md-6.col-sm-12
+        .subsection-box
+          .content-section-box
+            .profile-attribute
+              - %w(email user_name).each do |user_attr|
+                - unless @resource.try(user_attr).try(:blank?)
+                  .profile-attribute
+                    .attribute-label
+                      = @resource.try("field_for_#{user_attr}") || user_attr.humanize
+                    .attribute-content
+                      = @resource.try(user_attr)
+
+        .subsection-box
+          .title-section-box= "Información personal"
+          .content-section-box
+            - %w(first_name second_name tlf).each do |user_attr|
+              - unless @resource.try(user_attr).try(:blank?)
+                .profile-attribute
+                  .attribute-label
+                    = @resource.try("field_for_#{user_attr}") || user_attr.humanize
+                  .attribute-content
+                    = @resource.try(user_attr)
+
+    - if @resource.try(:profile_picture)
+      .row
+        .col-md-12
+          .section-box
+            .content-section-box
+              = sanitize @resource.content
