@@ -1,0 +1,50 @@
+.main-wall
+  .row
+    .section.col-md-12
+      %center
+        %h2= "Hola #{@user.name}, este es tu panel de administrador de webmaster."
+
+  .section-box
+    .subsection-box
+      .title-section-box= "Usuarios de Sepopedia:"
+      %br
+      .content-section-box
+        %table.table
+          %thead
+            %tr
+              %th= "#"
+              - %w(email user_name first_name second_name tlf created_at updated_at).each do |user_attr|
+                %th= @user.send("field_for_#{user_attr}")
+              %th= "Actions"
+          %tbody
+            - @users.each do |user|
+              %tr
+                %th= user.id
+                %td= user.email_link
+                - %w(user_name first_name second_name tlf created_at updated_at).each do |user_attr|
+                  %td= user.send(user_attr)
+                %td
+                  - unless user.webmaster? 
+                    = button_to "Webmaster", make_webmaster_user_path(id: user.id), method: :put, class: "btn btn-outline-primary btn-sm", data: { confirm: "Estás seguro de que deseas otorgar privilegios de webmaster al usuario con email '#{user.email}'? Una vez solo hagas ya no podrás quitar dichos privilegios." }
+                    = button_to "Eliminar", delete_user_user_path(id: user.id), method: :delete, class: "btn btn-outline-danger btn-sm", data: { confirm: "Estas seguro de que deseas eliminar al usuario con email '#{user.email}'?" }
+
+    .subsection-box
+      .title-section-box
+        Renunciar a los privilegios de webmaster:
+      .content-section-box
+        .text-box
+          .title-text-box
+            ¿Por qué debería renunciar a los privilegios de webmaster?
+          .content-text-box
+            %p
+              Ser webmaster de sepopedia conlleva una responsabilidad que consiste en administrar tanto los usuarios como los artículos de la página, si has sido nombrado webmaster por otro usuario es porque este piensa que serás capaz de acarrerar dicha responsabilidad, si tú crees que no puedes o que no tienes tiempo para ello, es tu deber renunciar a los privilegios de webmaster.
+            %p
+              Por otra parte, la applicación necesita de almenos un webmaster, por lo que si eres el único webmaster de la página, no se te permitirá ni renunciar a los privilegios ni eliminar tu cuenta. Si esta es tu situación y aun asi quieres renunciar a los privilegios, primero debes nombrar webmaster a otro usuario.
+
+      .title-section-box
+        Si deseas renunciar definitivamente a los privilegios de webmaster, haz click en el siguiente botón:
+      .content-section-box
+        %center
+          = button_to "Renunciar a los privilegios de webmaster", renounce_webmaster_user_path(id: @user.id), method: :put, class: "btn btn-outline-danger btn-lg", data: { confirm: "Una vez renuncies a los privilegios de webmaster no podrás volver a recuperarlos a menos que otro usuario te nombre webmaster de nuevo. Estas seguro que deseas continuar?" }
+ 
+
