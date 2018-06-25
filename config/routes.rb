@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :users, only: [:show] do
-  	get "my_profile" => "users#my_profile", on: :collection
+  get "webmaster" => "webmasters#webmaster"
+  get "my_profile" => "users#my_profile"
+
+  resources :users, only: [:show] do 
+  	put :make_webmaster, to: "webmasters#make_webmaster", on: :member
+  	put :renounce_webmaster, to: "webmasters#renounce_webmaster", on: :member
+  	delete :delete_user, to: "webmasters#delete_user", on: :member
   end
 end
