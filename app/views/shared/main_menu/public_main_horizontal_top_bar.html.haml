@@ -18,9 +18,11 @@
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             %strong= current_user.name
           .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-            = link_to t('views.shared.main_menu.show_my_profile'), my_profile_users_path, :class => 'dropdown-item'
+            = link_to t('views.shared.main_menu.show_my_profile'), my_profile_path, :class => 'dropdown-item'
             = link_to t('views.shared.main_menu.edit_my_profile'), edit_user_registration_path, :class => 'dropdown-item'
-            
+            - if current_user.webmaster?
+              .dropdown-divider
+              = link_to "Panel de webmaster", webmaster_path, :class => 'dropdown-item'
             .dropdown-divider
             = link_to t('views.shared.main_menu.logout'), destroy_user_session_path, method: :delete, :class => 'dropdown-item'
             %a.dropdown-item{:href => "#"}= t('views.shared.main_menu.remove_account')
