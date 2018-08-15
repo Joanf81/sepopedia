@@ -8,16 +8,16 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   process resize_to_fit: [600, 600]
 
-  version :thumb do
+  version :normal do
     process resize_to_fill: [300, 300]
+  end
+
+  version :icon do
+    process resize_to_fill: [50, 50]
   end
 
   def store_dir
     "file_uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
-
-  def default_url(*args)
-    ActionController::Base.helpers.asset_path("default_images/default_profile_image.png")
   end
 
   def extension_whitelist

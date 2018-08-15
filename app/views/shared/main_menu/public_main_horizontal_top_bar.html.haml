@@ -11,6 +11,9 @@
           %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"}= t('views.shared.main_menu.find_button')
 
       - if user_signed_in?
+        %li.nav-item{style: "margin-right: 50px;"}
+          %form.form-inline.my-2.my-md-0
+            = link_to "Nuevo artículo", new_article_path, method: :get, class: "btn btn-outline-primary", style: "color: #007bff"
         %li.nav-item{style: "margin-rigth: 10px;"}
           %span.navbar-text
             = t('views.shared.main_menu.hola')

@@ -20,6 +20,10 @@ class UserDecorator < ApplicationDecorator
     link_to object.email, h.user_path(object)
   end
 
+  def name_link
+    link_to name, h.user_path(object)
+  end
+
   def field_for_email
   	"Email:"
   end

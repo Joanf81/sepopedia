@@ -36,7 +36,7 @@
           .subsection-box
             .title-section-box= "Foto de perfil"
             .content-section-box
-              = f.input :profile_picture, as: :avatar, label: false, id: "upload_profile-picture"
+              = f.input :profile_picture, as: :picture, label: false, id: "upload_profile-picture", version: :normal, class: "profile-picture"
               %label{ for: "user_profile_picture" }
 
 

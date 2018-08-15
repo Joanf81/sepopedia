@@ -1,0 +1,30 @@
+.main-wall
+	.row
+		.section.col-md-12
+			%center
+				%h2= "Historial de ediciones de '#{@resource.title}'"
+
+			.section-box
+				.row
+					.col-md-12
+						.subsection-box
+							.content-section-box
+								%table.table
+									%thead
+										%tr
+											%th= "#"
+											- %w(icon created_at user characters_added).each do |edition_attr|
+												%th= @resource.send("field_for_edition_#{edition_attr}")
+											%th= "Actions"
+									%tbody
+										- @resource.article_editions.decorate.to_a.reverse.each_with_index do |edition, index|
+											%tr
+												%td= index+1
+												- %w(icon created_at user characters_added).each do |edition_attr|
+													%td= edition.send(edition_attr)
+												%td
+													- if index == 0
+														= button_to "Artículo actual", article_path(@resource), method: :get, class: "btn btn-outline-primary btn-sm"
+													- else
+														= link_to "Ver", editions_article_path(id: @resource.id, id_edition: edition.id), method: :get, class: "btn btn-outline-primary btn-sm"
+														= link_to "Restaurar", editions_article_path(id: @resource.id, id_edition: edition.id), method: :put, class: "btn btn-outline-danger btn-sm", data: { confirm: "Estas seguro de que deseas restaurar el artículo? Todas las modificaciones creadas despueés de esta será eliminadas" }

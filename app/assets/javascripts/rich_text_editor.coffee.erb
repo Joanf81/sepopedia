@@ -1,8 +1,20 @@
 $(document).ready () ->
-	$(".rich-text-editor-for-user-profile").froalaEditor({
+
+	$(".rich-text-editor-for-user-profile").on 'froalaEditor.initialized', (e, editor) -> 
+		$(".rich-text-editor-for-user-profile").froalaEditor('html.set', $("#user-content").val());
+
+	$(".rich-text-editor-for-article").on 'froalaEditor.initialized', (e, editor) -> 
+		$(".rich-text-editor-for-article").froalaEditor('html.set', $("#article-content").val());
+
+	$(".rich-text-editor-for-user-profile").froalaEditor {
 		height: 500,
 		fontSizeSelection: true,
 		fontSize: ['8', '10', '12', '14', '18', '22', '26', '32']
-	});
+	}
 
-	$(".rich-text-editor-for-user-profile").froalaEditor('html.set', $("#user-content").val());
+	$(".rich-text-editor-for-article").froalaEditor {
+		height: 500,
+		fontSizeSelection: true,
+		fontSize: ['8', '10', '12', '14', '18', '22', '26', '32']
+	}
+

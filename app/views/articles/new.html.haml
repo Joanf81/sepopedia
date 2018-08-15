@@ -1,0 +1,52 @@
+.main-wall
+	= simple_form_for(@resource, url: articles_path, html: {method: :post, class: "edit-profile-form", :multipart => true }) do |f|
+		.row
+			.section.col-md-12
+				%center
+					%h2= "Artículo nuevo:"
+
+				.section-box
+					- unless current_user.has_created_any_article?
+						.row
+							.col-md--12
+								.text-box
+									.title-text-box
+										¿Es este tu primer artículo?
+									.content-text-box
+										%p
+											Si este es tu primer artículo, te damos una serie de consejos para facilitar su creación:
+										%ul
+											%li= "Elije un título apropiado para tu artículo, de forma que resuma de forma muy breve su contenido."
+											%li= "La imagen que elijas debe ser una imagen altamente representativa del contenido del artículo."
+											%li= "Las palabres clave serán usadas por el buscador de artículos para ser encontrados, por lo que, si quieres que tu artículo sea facilmente accesible por otros usuarios, te recomendamos usar palabras que tengan gran relación con este."
+											%li= "Intenta estructurar bien el contenido del artículo, de esta forma facilitarás su lectura y edición al resto de usaurios de Sepopedia."
+										%p
+											Puedes consultar algún artículo ya creado a modo de ejemplo, como este.
+					%br
+					%br
+					.row
+						.col-md-6.col-sm-12
+							.subsection-box
+								.title-section-box= "Foto del artículo"
+								.content-section-box
+									= f.input :picture, as: :picture, label: false, id: "upload_profile-picture", version: :normal, class: "article-picture"
+
+						.col-md-6.col-sm-12
+							.subsection-box
+								.title-section-box= "Información de básica"
+								%br
+								.content-section-box
+									= f.input_field :title, autofocus: true, autocomplete: "title", placeholder: "Título", class: "input-string"
+									= f.input_field :key_words, autofocus: true, autocomplete: "key_words", placeholder: "Palabras clave.", class: "input-string", aria: { describedby: "help_text_user_name" }
+									%small.form-text.text-muted.text-help{ id: "help_text_user_name" }
+										Las palabras clave serán usadas para indexar el artículo.
+					.row
+						.col-md-12
+							.subsection-box
+								.title-section-box= "Contenido del artículo"
+								.content-section-box
+									= f.text_area :content, :class => "rich-text-editor-for-user-profile"
+
+					.row
+						.col-md-12
+							= f.button :submit, value: "Crear artículo", class: "btn btn-lg btn-outline-primary btn-block"

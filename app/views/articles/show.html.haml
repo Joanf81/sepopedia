@@ -1,0 +1,37 @@
+.main-wall
+	.row
+		.section.col-md-12
+			%center
+				%h2= @resource.title
+
+			.section-box
+				.row
+					.col-md-6.col-sm-12
+						.subsection-box
+							.content-section-box
+								= image_tag(@resource.try(:picture).try(:url, :normal), :class => 'article-picture', id: 'article-picture')
+
+					.col-md-6.col-sm-12
+						.subsection-box
+							.content-section-box
+								- %w(created_at last_modification_date key_words).each do |article_attr|
+									- unless @resource.try(article_attr).try(:blank?)
+										.profile-attribute
+											.attribute-label
+												= @resource.try("field_for_#{article_attr}") || article_attr.humanize
+											.attribute-content
+												= @resource.try(article_attr)
+							%br
+							.profile-attribute
+								.attribute-content
+									= link_to "Editar artículo", edit_article_path(@resource), method: :get, class: "btn btn-outline-primary"
+									= link_to "Ediciones", editions_article_path(@resource), method: :get, class: "btn btn-outline-primary"
+									- if @has_current_user_article_owner_right
+										= link_to "Eliminar artículo", article_path, method: :delete, class: "btn btn-outline-danger"
+
+				.row
+					.col-md-12
+						.subsection-box
+							.title-section-box= "Contenido del artículo"
+							.content-section-box
+								= sanitize @resource.content

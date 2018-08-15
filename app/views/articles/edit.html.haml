@@ -1,0 +1,63 @@
+.main-wall
+	= simple_form_for(@resource, url: article_path(@resource), html: {method: :put, class: "edit-profile-form", :multipart => true }) do |f|
+		.row
+			.section.col-md-12
+				%center
+					%h2= "Edición del artículo '#{@resource.title}':"
+
+				.section-box
+					- unless current_user.has_edited_any_article?
+						.row
+							.col-md--12
+								.text-box
+									.title-text-box
+										¿Es la primera vez que editas un artículo?
+									.content-text-box
+										%p
+											Si esta es tu primera edición de un artículo, te recomendamos leer antes estos consejos:
+										%ul
+											%li= "El titulo y las palabras clave, son tarea del creador del artículo y de los webmasters, por lo que si no eres webmaster ni has creado el artículo no podrás modificarlos."
+											%li= "El contenido que añadas o elimines debe mejorar siempre la veracidad del artículo y ampliar la información que este ofrezca, el creador de este o los webmasters podrán restaurar el artículo a un estado anterior si consideran que tu modificación no es apropiada."
+											%li= "Si elijes una nueva imagen, esta debe representar el nuevo contenido del artículo."
+
+					%br
+					%br
+					.row
+						.col-md-6.col-sm-12
+							.subsection-boxarticle-picture
+								.title-section-box= "Imagen del artículo"
+								.content-section-box
+									= f.input :picture, as: :picture, label: false, id: "upload_profile-picture", version: :normal, class: "article-picture"
+
+						.col-md-6.col-sm-12
+							.subsection-box
+								.title-section-box= "Información de básica"
+								%br
+								.content-section-box
+									- if @has_current_user_article_owner_right
+										= f.input_field :title, autofocus: true, autocomplete: "title", placeholder: "Título", class: "input-string"
+										= f.input_field :key_words, autofocus: true, autocomplete: "key_words", placeholder: "Palabras clave.", class: "input-string", aria: { describedby: "help_text_user_name" }
+										%small.form-text.text-muted.text-help{ id: "help_text_user_name" }
+											Las palabras clave serán usadas para indexar el artículo.
+									- else
+										%p
+											Solo él creadores del artículo o los usuarios con privilegios de webmaster pueden editar la información básicat.
+									%br
+									%br
+									.profile-attribute
+										.attribute-content
+											= link_to "Página del artículo", article_path(@resource), method: :get, class: "btn btn-outline-primary"
+											= link_to "Ediciones", editions_article_path(@resource), method: :get, class: "btn btn-outline-primary"
+											- if @has_current_user_article_owner_right
+												= link_to "Eliminar artículo", article_path, method: :delete, class: "btn btn-outline-danger"
+					.row
+						.col-md-12
+							.subsection-box
+								.title-section-box= "Contenido del artículo"
+								.content-section-box
+									= hidden_field_tag 'article-content', @resource.content
+									= f.text_area :content, :class => "rich-text-editor-for-article"
+
+					.row
+						.col-md-12
+							= f.button :submit, value: "Modificar artículo", class: "btn btn-lg btn-outline-primary btn-block"

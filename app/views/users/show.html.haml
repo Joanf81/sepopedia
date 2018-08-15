@@ -8,7 +8,7 @@
       .col-md-6.col-sm-12
         .subsection-box
           .content-section-box
-            = image_tag(@resource.try(:profile_picture).try(:url, :thumb), :class => 'profile-picture', id: 'profile-picture', height: '300', width: '300')
+            = image_tag(@resource.try(:profile_picture).try(:url, :normal), :class => 'profile-picture', id: 'profile-picture')
 
       .col-md-6.col-sm-12
         .subsection-box

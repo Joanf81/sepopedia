@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   	put :renounce_webmaster, to: "webmasters#renounce_webmaster", on: :member
   	delete :delete_user, to: "webmasters#delete_user", on: :member
   end
+
+  resources :articles, controller: "articles/articles" do
+    get :editions, on: :member
+    get "show_edition/:id_edition", on: :member, action: :show_edition
+    put "restore/:id_edition", on: :member, action: :restore
+  end
 end
